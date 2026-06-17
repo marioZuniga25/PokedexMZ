@@ -1,0 +1,91 @@
+.Poke-Container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.Poke-Title{
+    text-align: left;
+    font-weight: bold;
+    color: #6d3500;
+    text-shadow: none;
+    align-self: flex-start;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.back-box-Desc{
+    width: 85%;
+    max-height: 70px;
+    background-color: #ffffff;
+    margin: 0 10px 0% 10px;
+    border: 5px solid #97703d;
+}
+
+.Poke-Desc{
+    color: #6d3500;
+    text-shadow: none;
+    align-self: flex-start;
+    margin: 10px;
+}
+.back-box{
+    width: 85%;
+    max-height: 130px;
+    background-color: #ffffff;
+    margin: 0 10px 0% 10px;
+    border: 5px solid #97703d; 
+}
+
+.Poke-Card{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff48fbd;
+    border: 5px solid #97703d;
+    border-radius: 10px;
+    width: 25%;
+    height: 280px;
+    align-items: center;
+    
+    font-size: 1.5em;
+    
+    transition: 0.3s;
+}
+
+.Poke-Name{
+    margin: 5px;
+    color:  #ffffff;
+    text-shadow: -1px -1px 0 #381b00,
+     1px -1px 0 #381b00,
+    -1px  1px 0 #381b00,
+     1px  1px 0 #381b00;
+}
+
+.Poke-Card:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@keyframes img-movement {
+
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+
+.Poke-Card:hover img {
+  transform: scale(0.8);
+  transition: 0.3s;
+  animation: img-movement 0.5s infinite;
+}
+
