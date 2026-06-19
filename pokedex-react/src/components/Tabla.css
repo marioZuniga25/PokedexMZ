@@ -17,10 +17,11 @@
 
 .back-box-Desc{
     width: 85%;
-    max-height: 70px;
+    height: 30%;
     background-color: #ffffff;
     margin: 0 10px 0% 10px;
     border: 5px solid #97703d;
+    text-align: left;
 }
 
 .Poke-Desc{
@@ -28,6 +29,7 @@
     text-shadow: none;
     align-self: flex-start;
     margin: 10px;
+    
 }
 .back-box{
     width: 85%;
@@ -40,16 +42,44 @@
 .Poke-Card{
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
     background-color: #fff48fbd;
     border: 5px solid #97703d;
     border-radius: 10px;
     width: 25%;
-    height: 280px;
+    height: 20rem;
     align-items: center;
-    
     font-size: 1.5em;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.Poke-ModalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 900;
+}
+
+.Poke-Card--selected {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(90vw, 290px);
+    max-height: 90vh;
+    padding: 1rem;
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 1000;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    border-color: #805318;
+    background-color: #dbcb81;
+    font-size: 0.6em;
+    line-height: 1.2em;
     
-    transition: 0.3s;
+}
+
+.Poke-Card--selected .Poke-Name{
+    font-size: 1.80em;
 }
 
 .Poke-Name{
@@ -59,9 +89,10 @@
      1px -1px 0 #381b00,
     -1px  1px 0 #381b00,
      1px  1px 0 #381b00;
+
 }
 
-.Poke-Card:hover{
+.Poke-Card:not(.Poke-Card--selected):hover{
     transform: scale(1.05);
     transition: 0.3s;
     cursor: pointer;
@@ -83,9 +114,9 @@
 
 
 
-.Poke-Card:hover img {
-  transform: scale(0.8);
+.Poke-Card:not(.Poke-Card--selected):hover img {
+  /* transform: scale(0.8); */
   transition: 0.3s;
-  animation: img-movement 0.5s infinite;
+  animation: img-movement 0.3s infinite;
 }
 
